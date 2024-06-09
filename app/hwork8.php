@@ -10,6 +10,8 @@
 
     <?php
 
+        
+
         $name = $_POST['name'];
         $last_name = $_POST['last_name'];
         $email = $_POST['email'];
@@ -103,7 +105,25 @@
                 echo "Did you forget to fill one of the fields?";
             };
 
-        ?>
+            ?>
+
+        <?php    
+        $data = [
+            'vards' => 'name',
+            'last_name' => 'last_name',
+            'pasts' => 'email',
+            'valsts' => 'country',
+            'iela' => 'street',
+            'pilseta' => 'city',
+            'shtats' => 'state',
+            'zips' => 'zip'
+        ];
+
+
+        foreach ($_POST as $name => $info) {?>
+            <p><?= $name ?> : <?=$info?></p>
+        <?php } ?>
+
         </div>
     </div>
 </body>
