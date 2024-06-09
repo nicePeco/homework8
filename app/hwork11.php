@@ -56,11 +56,9 @@
         <?php $person = (!empty($_POST["person"]) ? $_POST["person"] : "");
         
         if (!empty($person)) {
-            function order($a, $b) {
-                return strcmp($a["lastName"], $b["lastName"]);
-            }
-
-            usort($person, 'order');
+            usort($person, function($a, $b) {
+                return $a["lastName"] <=> $b["lastName"];
+            });
         }
         
         ?>
