@@ -56,11 +56,11 @@
         <?php $person = (!empty($_POST["person"]) ? $_POST["person"] : "");
         
         if (!empty($person)) {
-            function compareLastName($a, $b) {
+            function order($a, $b) {
                 return strcmp($a["lastName"], $b["lastName"]);
             }
 
-            usort($person, 'compareLastName');
+            usort($person, 'order');
         }
         
         ?>
@@ -75,7 +75,6 @@
                         <td><?= ($result["balss"]) ?></td>
                     </tr>
                 <?php } ?>
-                
                 
             </table>
         </div>
